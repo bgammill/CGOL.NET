@@ -15,7 +15,7 @@ namespace CGOL.NET
         public int HeightRatio { get; private set; }
         public int WidthRatio { get; private set; }
 
-        public const int DIVISOR = 100;
+        public const int DIVISOR = 10;
 
         public Grid(int height, int width)
         {
@@ -38,7 +38,7 @@ namespace CGOL.NET
             // draw rows
             for (var i = 1; i <= DIVISOR; i++)
             {
-                //Primitives2D.DrawLine(spriteBatch, new Vector2(WidthRatio * i, 0), new Vector2(WidthRatio * i, Height), Color.Black);
+                Primitives2D.DrawLine(spriteBatch, new Vector2(0, HeightRatio * i), new Vector2(Width, HeightRatio * i), Color.Black);
             }
         }
     }
