@@ -15,6 +15,8 @@ namespace CGOL.NET
         public int HeightRatio { get; private set; }
         public int WidthRatio { get; private set; }
 
+        List<Element> elements = new List<Element>();
+
         public const int DIVISOR = 10;
 
         public Grid(int height, int width)
@@ -24,11 +26,25 @@ namespace CGOL.NET
 
             this.HeightRatio = height / DIVISOR;
             this.WidthRatio = width / DIVISOR;
+
+            CreateElements();
+        }
+
+        private void CreateElements()
+        {
+            // row loop
+            for (var i = 1; i <= DIVISOR; i++)
+            {
+                // column loop
+                for (var j = 1; j <= DIVISOR; j++)
+                {
+                    elements.Add(new Element(new Vector2(i, j)));
+                }
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-
             // draw columns
             for (var i = 1; i <= DIVISOR; i++)
             {
@@ -43,3 +59,4 @@ namespace CGOL.NET
         }
     }
 }
+
