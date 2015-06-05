@@ -14,5 +14,10 @@ namespace CGOL.NET
         {
             this.Position = position;
         }
+
+        public Element(float x, float y)
+        {
+            this.Position = new Vector2(x, y);
+        }
     }
 }

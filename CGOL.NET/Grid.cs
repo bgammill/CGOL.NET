@@ -57,6 +57,16 @@ namespace CGOL.NET
                 Primitives2D.DrawLine(spriteBatch, new Vector2(0, HeightRatio * i), new Vector2(Width, HeightRatio * i), Color.Black);
             }
         }
+
+        public Vector2 GetCenterPoint(Element element)
+        {
+            return new Vector2((element.Position.X * WidthRatio) / 2, (element.Position.Y * HeightRatio) / 2);
+        }
+
+        public Vector2 GetPoint(Element element)
+        {
+            return new Vector2((element.Position.X * WidthRatio), (element.Position.Y * HeightRatio));
+        }
     }
 }
 
